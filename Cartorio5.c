@@ -135,6 +135,7 @@ int main() { //Início da função principal "main"
 		printf("\t1 - Registrar nomes \n");
 		printf("\t2 - Consultar nomes \n");
 		printf("\t3 - Deletar nomes \n\n");
+		printf("\t4 - Sair do sistema \n\n");
 		printf("Digite a opção: ");
 		
 		scanf("%d", &opcao); //armazenando a escolha do usuário, coloca-se o operador '&' quando se está lendo valores de tipos inteiros, caracteres individuais e floats.
@@ -153,6 +154,11 @@ int main() { //Início da função principal "main"
 			
 			case 3:
 				deletar();
+				break;
+				
+			case 4:
+				printf("Obrigado por utilizar o sistema! \n");
+				return 0;
 				break;
 			
 			default:
