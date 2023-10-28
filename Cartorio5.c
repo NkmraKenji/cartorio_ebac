@@ -114,57 +114,70 @@ int deletar()
 		printf("Usuário não se encontra no sistema! \n");
 		system("pause");
 	}
-	
-	
+		
 }
-
-
 
 int main() { //Início da função principal "main"
 	int opcao = 0; //Declarando uma variável inteira chamada "opcao" e inicizalizando-a com valor 0
 	int laco = 1; //Declarando uma variável inteira chamada "laco" e inicializando-a com valor 1
+	char senhadigitada[10]="a";	
+	int comparacao;
 	
-	for(laco=1; laco=1;)
+	printf("### Cartório da EBAC ### \n\n");
+	printf("Login de administrador! \n\nDigite a sua senha: ");
+	scanf("%s", senhadigitada);
+	
+	comparacao = strcmp(senhadigitada, "admin");
+	
+	if(comparacao == 0)
 	{
-		system("cls");
-		
-		setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem, sendo 'LC_ALL' uma constante que representa todas as categorias, sendo a ligua 'Portuguese' escolhida
-		
-		printf("### Cartório da EBAC ###\n\n");
-		printf("Escolha a opção desejada do menu: \n\n");
-		printf("\t1 - Registrar nomes \n");
-		printf("\t2 - Consultar nomes \n");
-		printf("\t3 - Deletar nomes \n\n");
-		printf("\t4 - Sair do sistema \n\n");
-		printf("Digite a opção: ");
-		
-		scanf("%d", &opcao); //armazenando a escolha do usuário, coloca-se o operador '&' quando se está lendo valores de tipos inteiros, caracteres individuais e floats.
-		
-		system("cls");
-		
-		switch(opcao) //instrução switch serve para a criação de estruturas de controles de seleção com várias opções. Avaliando o valor da variável 'opcao'
+
+		for(laco=1; laco=1;)
 		{
-			case 1:
-				registro();
-				break;
+			system("cls");
 			
-			case 2:
-				consulta();
-				break;
+			setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem, sendo 'LC_ALL' uma constante que representa todas as categorias, sendo a ligua 'Portuguese' escolhida
 			
-			case 3:
-				deletar();
-				break;
+			printf("### Cartório da EBAC ###\n\n");
+			printf("Escolha a opção desejada do menu: \n\n");
+			printf("\t1 - Registrar nomes \n");
+			printf("\t2 - Consultar nomes \n");
+			printf("\t3 - Deletar nomes \n\n");
+			printf("\t4 - Sair do sistema \n\n");
+			printf("Digite a opção: ");
+			
+			scanf("%d", &opcao); //armazenando a escolha do usuário, coloca-se o operador '&' quando se está lendo valores de tipos inteiros, caracteres individuais e floats.
+			
+			system("cls");
+			
+			switch(opcao) //instrução switch serve para a criação de estruturas de controles de seleção com várias opções. Avaliando o valor da variável 'opcao'
+			{
+				case 1:
+					registro();
+					break;
 				
-			case 4:
-				printf("Obrigado por utilizar o sistema! \n");
-				return 0;
-				break;
-			
-			default:
-				printf("Essa opção não está disponível! \n");
-				system("pause"); //esse comando serve para manter a janela do console aberta, acontece que no S.O. WINDOWS, a janela do console é fechada imediatamente após a conclusão da execução do programa.
-				break;
+				case 2:
+					consulta();
+					break;
+				
+				case 3:
+					deletar();
+					break;
+					
+				case 4:
+					printf("Obrigado por utilizar o sistema! \n");
+					return 0;
+					break;
+				
+				default:
+					printf("Essa opção não está disponível! \n");
+					system("pause"); //esse comando serve para manter a janela do console aberta, acontece que no S.O. WINDOWS, a janela do console é fechada imediatamente após a conclusão da execução do programa.
+					break;
+			}
 		}
 	}
+
+	else
+		printf("Senha incorreta!");
+		
 }
